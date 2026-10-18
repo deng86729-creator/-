@@ -68,7 +68,7 @@ public class GameController extends HttpServlet {
 	       		Player lastPlayer = game.getLastDiscardPlayer();
 	
 	           	// 捨てたのが自分以外で、自分がその牌を2枚持っている場合
-	           	if (targetPai != null && lastPlayer != player && player.countPaiByName(targetPai.getName()) >= 2) {
+	           	if (targetPai != null && lastPlayer != player && player.countPaiByName(targetPai.getName()) == 2) {
 	           		// 牌を手牌に加える
 	           		player.addPai(targetPai);
 	           		lastPlayer.pickUpKawaPai(lastPlayer.getKawa().size() - 1);
